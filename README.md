@@ -1,50 +1,51 @@
-ÉñÆ÷gpssh-exkeys
-ÊÇgreenplum-db-4.3.8.2-build-1-RHEL5-x86_64 ÀïÃæµÄÒ»¸öÃüÁî¡£
+ç¥å™¨gpssh-exkeys
+æ˜¯greenplum-db-4.3.8.2-build-1-RHEL5-x86_64 é‡Œé¢çš„ä¸€ä¸ªå‘½ä»¤ã€‚
+
 Exchanges SSH public keys between hosts
 https://github.com/apache/incubator-hawq/blob/master/tools/bin/gpssh-exkeys
 
 http://hdb.docs.pivotal.io/130/docs-hawq/docs-hawq-shared/utility_guide/admin_utilities/gpssh-exkeys.html
 
-ĞÂ°æ±¾ÊÇhawq ssh-exkeys
+æ–°ç‰ˆæœ¬æ˜¯hawq ssh-exkeys
 http://hdb.docs.pivotal.io/211/hawq/reference/cli/admin_utilities/hawqssh-exkeys.html
 
 
 
-¹¦ÄÜ£ºĞí¶à»úÆ÷Ö®¼äÏà»¥»¥ĞÅ
+åŠŸèƒ½ï¼šè®¸å¤šæœºå™¨ä¹‹é—´ç›¸äº’äº’ä¿¡
 
 
-1°²×°
+1å®‰è£…
 ./greenplum-db-4.3.8.2-build-1-RHEL5-x86_64.bin 
 
-Ò»Â·Ä¬ÈÏ£¬yes
+ä¸€è·¯é»˜è®¤ï¼Œyes
 
-Â·¾¶ÔÚ /usr/local/greenplum-db-4.3.8.2
+è·¯å¾„åœ¨ /usr/local/greenplum-db-4.3.8.2
 
 ##########
-»òÕß¸´ÖÆÒÑ¾­°²×°ºÃµÄ£¬×Ô¼ºµ¥¶ÀÌáÈ¡ÃüÁî£¬×ö¸ö¼ò½à°æ
+æˆ–è€…å¤åˆ¶å·²ç»å®‰è£…å¥½çš„ï¼Œè‡ªå·±å•ç‹¬æå–å‘½ä»¤ï¼Œåšä¸ªç®€æ´ç‰ˆ
 tar -xvf gpssh-exkeys-v2.tar -C /usr/local/
 
 chmod -R 777 /usr/local/greenplum-db-4.3.8.2/
 #############
 
-2È»ºóÖ´ĞĞ
+2ç„¶åæ‰§è¡Œ
 source /usr/local/greenplum-db-4.3.8.2/greenplum_path.sh
 
-3 ÅäÖÃºÃËùÓĞ»úÆ÷µÄ
+3 é…ç½®å¥½æ‰€æœ‰æœºå™¨çš„
 vi /etc/hosts
-±ÈÈç 
+æ¯”å¦‚ 
 192.168.184.73  test73
 192.168.184.74  test74
 
-4 ÔÚ°²×°ÁËgreenplum-dbµÄ»úÆ÷ÉÏ£¬ĞÂÔöÒ»¸öÎÄ¼ş,Ö»ÒªĞ´Ö÷»úÃû ¾ÍĞĞÁË
-±ÈÈç vi /tmp/hosts_all
+4 åœ¨å®‰è£…äº†greenplum-dbçš„æœºå™¨ä¸Šï¼Œæ–°å¢ä¸€ä¸ªæ–‡ä»¶,åªè¦å†™ä¸»æœºå å°±è¡Œäº†
+æ¯”å¦‚ vi /tmp/hosts_all
 test73
 test74
 
-5 ssh»¥ĞÅ
+5 sshäº’ä¿¡
 gpssh-exkeys --version
 
  gpssh-exkeys -f /tmp/hosts_all
 
-6 Ğ¶ÔØ
+6 å¸è½½
  rm -rf /usr/local/greenplum-db-4.3.8.2
