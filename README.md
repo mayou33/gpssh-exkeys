@@ -23,23 +23,32 @@ http://hdb.docs.pivotal.io/211/hawq/reference/cli/admin_utilities/hawqssh-exkeys
 
 ##########
 或者复制已经安装好的，自己单独提取命令，做个简洁版
+
 tar -xvf gpssh-exkeys-v2.tar -C /usr/local/
 
 chmod -R 777 /usr/local/greenplum-db-4.3.8.2/
 #############
 
 2然后执行
+
 source /usr/local/greenplum-db-4.3.8.2/greenplum_path.sh
 
 3 配置好所有机器的
+
 vi /etc/hosts
+
 比如 
+
 192.168.184.73  test73
+
 192.168.184.74  test74
 
 4 在安装了greenplum-db的机器上，新增一个文件,只要写主机名 就行了
+
 比如 vi /tmp/hosts_all
+
 test73
+
 test74
 
 5 ssh互信
